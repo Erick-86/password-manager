@@ -23,4 +23,12 @@ website_label.grid(row=1, column=0)
 website_entry = Entry(width=50)
 website_entry.grid(row=1, column=1, padx=5, pady=5, ipady=2, columnspan=2, sticky="ew")
 
+# Email/username field
+email_label = Label(text="Email/Username")
+email_label.grid(row=2, column=0)
+# Label
+email_entry = Entry(width=50)
+email_entry.grid(row=2, column=1, pady=5, padx=5, ipady=2, columnspan=2, sticky="ew")
+
+
 window.mainloop()
