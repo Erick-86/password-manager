@@ -41,4 +41,8 @@ password_gen_btn = Button(text="Generate Password")
 password_gen_btn.grid(row=3, column=2, padx=5, ipadx=2, sticky="ew")
 
 
+# Add password btn
+add_btn = Button(text="Add")
+add_btn.grid(row=4, column=1, padx=5, pady=5, columnspan=2, sticky="ew")
+
 window.mainloop()
