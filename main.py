@@ -6,6 +6,23 @@ chars = {
     "special_chars": "!@#$%&*?.,:;()``{[}]_-+=/`\`|~^"
 }
 
+def password_generator():
+    password_len = random.randint(8, 32)
+    password = []
+
+    while not len(password) == password_len:
+        for k,v in chars.items():
+          random_k = random.choice(k)
+          random_value = random.choice(random_k)
+
+        password.append(random_value)
+    
+    random.shuffle(password)
+    gen_password = "".join(password)
+    print(password_len)
+    print(gen_password)
+
+password_generator()
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
