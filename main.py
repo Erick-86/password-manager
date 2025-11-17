@@ -1,4 +1,11 @@
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
+import random
+chars = {
+    "num": "1234567890",
+    "letter": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "special_chars": "!@#$%&*?.,:;()``{[}]_-+=/`\`|~^"
+}
+
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
