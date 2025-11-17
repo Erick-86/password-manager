@@ -21,6 +21,7 @@ website_label = Label(text="Website")
 website_label.grid(row=1, column=0)
 # Label
 website_entry = Entry(width=50)
+website_entry.focus()
 website_entry.grid(row=1, column=1, padx=5, pady=5, ipady=2, columnspan=2, sticky="ew")
 
 # Email/username field
