@@ -17,9 +17,8 @@ def password_generator():
         password.append(char)
 
     password = "".join(password)
-    print(password)
-
-password_generator()
+    password_input.delete(0, "end")
+    password_input.insert(0, password)
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
@@ -59,7 +58,7 @@ password_label.grid(row=3, column=0)
 password_input = Entry()
 password_input.grid(row=3, column=1, padx=5, pady=5, ipady=2, sticky="ew")
 # Btn
-password_gen_btn = Button(text="Generate Password")
+password_gen_btn = Button(text="Generate Password", command=password_generator)
 password_gen_btn.grid(row=3, column=2, padx=5, ipadx=2, sticky="ew")
 
 
