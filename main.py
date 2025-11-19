@@ -1,5 +1,6 @@
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 import random
+import pyperclip
 chars = {
     "num": "1234567890",
     "upper_letters": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
@@ -19,6 +20,9 @@ def password_generator():
     password = "".join(password)
     password_input.delete(0, "end")
     password_input.insert(0, password)
+
+    # copy to clipboard
+    pyperclip.copy(password)
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
