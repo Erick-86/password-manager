@@ -2,7 +2,8 @@
 import random
 chars = {
     "num": "1234567890",
-    "letter": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "upper_letters": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "lower_letters": "abcdefghijklmnopqrstuvwxyz",
     "special_chars": "!@#$%&*?.,:;()``{[}]_-+=/`\`|~^"
 }
 
@@ -11,16 +12,12 @@ def password_generator():
     password = []
 
     while not len(password) == password_len:
-        for k,v in chars.items():
-          random_k = random.choice(k)
-          random_value = random.choice(random_k)
+        character_key = random.choice(list(chars.keys()))
+        char = random.choice(chars[character_key])
+        password.append(char)
 
-        password.append(random_value)
-    
-    random.shuffle(password)
-    gen_password = "".join(password)
-    print(password_len)
-    print(gen_password)
+    password = "".join(password)
+    print(password)
 
 password_generator()
 
