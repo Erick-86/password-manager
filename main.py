@@ -4,7 +4,7 @@ chars = {
     "num": "1234567890",
     "upper_letters": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
     "lower_letters": "abcdefghijklmnopqrstuvwxyz",
-    "special_chars": "!@#$%&*?.,:;()``{[}]_-+=/`\`|~^"
+    "special_chars": "!@#$%&*?.,:;()``{[}]_-+=/`\\`|~^"
 }
 
 def password_generator():
