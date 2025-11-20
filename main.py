@@ -31,7 +31,7 @@ def add_password():
     # checking for input validation
     entry_lists = [website_entry, password_input, email_entry]
     empty_entry = False
-    file_path = "mypass.txt"
+    FILE_PATH = "../mypass.txt"
     for entry in entry_lists:
         if not entry.get():
             messagebox.showerror("Oops", "Please dont leave any field empty")
@@ -41,7 +41,7 @@ def add_password():
 
         # Saving data to a text file
         if continue_message:
-            with open(file_path, "a") as file:
+            with open(FILE_PATH, "a") as file:
                 file.write(f"{website_entry.get().strip()} | {email_entry.get().strip()} | {password_input.get().strip()}\n")
             messagebox.showinfo("Saved", "Password saved successfully")
             
