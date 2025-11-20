@@ -31,12 +31,23 @@ def add_password():
     # checking for input validation
     entry_lists = [website_entry, password_input, email_entry]
     empty_entry = False
+    file_path = "mypass.txt"
     for entry in entry_lists:
         if not entry.get():
             messagebox.showerror("Oops", "Please dont leave any field empty")
             empty_entry = True
     if not empty_entry:
-        messagebox.askyesno("Continue", f"Email: {email_entry.get()}\nPassword: {password_input.get()}\nIs this OK?")
+        continue_message = messagebox.askyesno("Continue", f"Email: {email_entry.get()}\nPassword: {password_input.get()}\nIs this OK?")
+
+        # Saving data to a text file
+        if continue_message:
+            with open(file_path, "a") as file:
+                file.write(f"{website_entry.get().strip()} | {email_entry.get().strip()} | {password_input.get().strip()}\n")
+            messagebox.showinfo("Saved", "Password saved successfully")
+            
+        email_entry.delete(0, "end")
+        password_input.delete(0, "end")
+        website_entry.delete(0, "end")
 
 
 # ---------------------------- UI SETUP ------------------------------- #
