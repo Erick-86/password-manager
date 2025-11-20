@@ -33,7 +33,7 @@ def add_password():
     empty_entry = False
     for entry in entry_lists:
         if not entry.get():
-            messagebox.showerror("Oops", "Please dont any field empty")
+            messagebox.showerror("Oops", "Please dont leave any field empty")
             empty_entry = True
     if not empty_entry:
         messagebox.askyesno("Continue", f"Email: {email_entry.get()}\nPassword: {password_input.get()}\nIs this OK?")
