@@ -1,4 +1,6 @@
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
+from tkinter import *
+from tkinter import messagebox
 import random
 import pyperclip
 chars = {
@@ -25,10 +27,19 @@ def password_generator():
     pyperclip.copy(password)
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
+def add_password():
+    # checking for input validation
+    entry_lists = [website_entry, password_input, email_entry]
+    empty_entry = False
+    for entry in entry_lists:
+        if not entry.get():
+            messagebox.showerror("Oops", "Please dont any field empty")
+            empty_entry = True
+    if not empty_entry:
+        messagebox.askyesno("Continue", f"Email: {email_entry.get()}\nPassword: {password_input.get()}\nIs this OK?")
+
 
 # ---------------------------- UI SETUP ------------------------------- #
-from tkinter import *
-
 window = Tk()
 window.title("Password Manager")
 window.config(padx=30, pady=30)
@@ -67,7 +78,7 @@ password_gen_btn.grid(row=3, column=2, padx=5, ipadx=2, sticky="ew")
 
 
 # Add password btn
-add_btn = Button(text="Add")
+add_btn = Button(text="Add", command=add_password)
 add_btn.grid(row=4, column=1, padx=5, pady=5, columnspan=2, sticky="ew")
 
 window.mainloop()
