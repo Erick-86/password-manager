@@ -75,6 +75,7 @@ email_label = Label(text="Email/Username")
 email_label.grid(row=2, column=0)
 # Label
 email_entry = Entry(width=50)
+email_entry.insert(0, "@gmail.com")
 email_entry.grid(row=2, column=1, pady=5, padx=5, ipady=2, columnspan=2, sticky="ew")
 
 # password label and field
